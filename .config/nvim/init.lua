@@ -28,7 +28,8 @@ require('packer').startup(function(use)
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
-    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-nvim-lsp-signature-help' },
+    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp-signature-help' },
   }
 
   use { -- Highlight, edit, and navigate code
@@ -348,6 +349,13 @@ local servers = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
+  },
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      procMacro = {
+        enable = true
+      }
+    }
   },
 }
 
